@@ -29,11 +29,13 @@
 
       <h2 id="bank-connections">Bank connections</h2>
       <p>Supported bank connections are provided through Plaid. If connection or saving fails, follow the app’s retry or recovery instructions. Availability depends on your financial institution and Plaid; RefundWatch cannot guarantee that a specific institution is supported.</p>
-      <p>To disconnect, open Banks &amp; cards and use Disconnect. <strong>Disconnecting one account revokes its shared bank connection and also disconnects other accounts linked through that same connection.</strong> It does not close the actual bank accounts or delete your local refund history. If the operation fails or its outcome is uncertain, follow recovery instructions or contact support.</p>
+      <p>To disconnect, open Banks &amp; cards and use Disconnect. <strong>When disconnection completes, every account sharing that Plaid connection is disconnected.</strong> The confirmation names one account, both accounts or the number affected. RefundWatch does not revoke a different Plaid Item merely because it is at the same bank. Disconnection does not close the actual bank accounts or delete your local refund history. Historical connection records may remain as described in the <a href="privacy.html#retention">Privacy Policy</a>. If the operation fails or its outcome is uncertain, follow recovery instructions or contact support.</p>
+      <p>Connecting through Plaid again does not guarantee two independent working connections. At some banks, establishing a new connection can invalidate an earlier one; see <a href="https://plaid.com/docs/link/duplicate-items/">Plaid’s explanation</a>. Contact support if an existing connection stops working after you add another account.</p>
       <p>You can also review connections using <a href="https://my.plaid.com/">Plaid Portal</a>, subject to Plaid’s own options and policies. Never send bank login credentials to support.</p>
 
       <h2 id="refund-tracking">Refund tracking</h2>
       <p>Add the refunds you want to track, choose the appropriate connected account and use Check refunds to request a check for posted credits. RefundWatch does not continuously monitor accounts in the background or initiate payments.</p>
+      <p>Bank-based checks stop for disconnected accounts. Reconnecting may be required, and existing refunds may still reference the old connection. Check the destination shown on each refund and contact support if it no longer corresponds to a connected account; do not assume reconnection automatically resumes those checks.</p>
       <p>Review possible matches carefully, especially when the bank credit differs from the amount you registered. A manual Received confirmation records your choice; it does not prove the full amount was returned. For a refund that is missing, delayed or disputed, contact the merchant or bank and verify your bank statement.</p>
 
       <h2 id="privacy">Privacy questions</h2>
