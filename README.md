@@ -22,4 +22,6 @@ The legal-page update remains a review draft, not an effective policy or a deplo
 
 The pages describe the reviewed iOS/backend source at `56d2672c7bdf50655015a40114551dea2beb35a7`. Source inspection does not establish that every deployed component or App Store Connect disclosure matches that revision. The PR records the technical claim verification and validation evidence.
 
+Publication evidence: [LEGAL-PUBLICATION-AUDIT.md](LEGAL-PUBLICATION-AUDIT.md) records the November 18, 2026 source, Release-manifest and retention review. Its recommendation is **NOT READY**. Resolve the documented owner/legal and disclosure blockers before treating Privacy Policy v1.0 or Terms of Service v1.0 as effective.
+
 No secrets, Plaid tokens, Firebase configuration, or user data belong in this repository.
