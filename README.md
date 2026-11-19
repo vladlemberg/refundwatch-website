@@ -21,7 +21,7 @@ Static informational website for RefundWatch, published via GitHub Pages from `m
 
 The legal pages remain review drafts, not an effective policy or a deployment approval. Retention decisions and the deletion-marker expiry are incorporated. The operator's business address, third-party/App Store disclosure reconciliation, legal review, Product Owner approval and an effective date remain publication blockers. Explicit source comments in `privacy.html` and `terms.html` track these decisions. Keep both draft banners until those decisions are resolved.
 
-The pages describe the reviewed iOS/backend source at `56d2672c7bdf50655015a40114551dea2beb35a7`. Source inspection does not establish that every deployed component or App Store Connect disclosure matches that revision. The PR records the technical claim verification and validation evidence.
+The original legal audit reviewed iOS/backend source at `56d2672c7bdf50655015a40114551dea2beb35a7` (audit baseline). The deletion-marker expiry described in Privacy §9 comes from the later implementation at `a68891f60161edd666e141dfdf37b0232439511d` (refund-watch PR #34); see audit §12. Source inspection does not establish that every deployed component or App Store Connect disclosure matches these revisions. The PR records the technical claim verification and validation evidence.
 
 Publication evidence: [LEGAL-PUBLICATION-AUDIT.md](LEGAL-PUBLICATION-AUDIT.md) records the November 18, 2026 source, Release-manifest and retention review. Its recommendation is **NOT READY**. Resolve the documented owner/legal and disclosure blockers before treating Privacy Policy v1.0 or Terms of Service v1.0 as effective.
 

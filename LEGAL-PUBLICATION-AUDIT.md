@@ -5,7 +5,7 @@
 
 > **Update 2026-11-19 — operator and deletion-marker expiry.** See §12. Operator is now Astora LLC; the deletion-marker expiry is deployed in Production.
 >
-> **Update 2026-11-18 — owner decisions incorporated.** Section 11 records the product owner's approved legal and retention decisions, the resulting Privacy/Terms/Support changes, policy-versus-implementation discrepancies and the updated blocker status. Rows in §2 whose paragraphs changed are superseded by §11; their line numbers refer to the earlier revision. Recommendation remains **NOT READY**: Livapo LLC is not registered.
+> **Update 2026-11-18 — owner decisions incorporated.** Section 11 records the product owner's approved legal and retention decisions, the resulting Privacy/Terms/Support changes, policy-versus-implementation discrepancies and the updated blocker status. Rows in §2 whose paragraphs changed are superseded by §11; their line numbers refer to the earlier revision. Recommendation remained **NOT READY**: the operator then proposed (a name since superseded; see §12) was not registered.
 
 Privacy Policy v1.0 and Terms of Service v1.0 are intended publication versions, not approved/effective policies. Existing website PR [#1](https://github.com/vladlemberg/refundwatch-website/pull/1) must remain Draft. This report authorizes neither merge nor deployment.
 
@@ -269,7 +269,7 @@ Website changes: `privacy.html` (draft notice, §1 scope/territory, §9 retentio
 
 | # | Approved decision | Website wording | Implementation status |
 | --- | --- | --- | --- |
-| D1 | Proposed operator Livapo LLC, Colorado, US; registration and address pending | Privacy/Terms draft notice and §1; Terms §10 | Not registered. No registration detail, address or effective date invented. |
+| D1 | Proposed operator (a Colorado LLC name since superseded by Astora LLC, §12); registration and address pending | Privacy/Terms draft notice and §1; Terms §10 | Not registered. No registration detail, address or effective date invented. |
 | D2 | Support initial-response target 2 business days, not a legal SLA | Terms §7; Support | Operational goal only; no ticketing system or measurement exists. |
 | D3 | Support correspondence (emails, replies, attachments) kept 12 months after case closure; legal exceptions; reopened cases restart on next closure | Privacy §9 | **Procedure only.** Mailbox is refundwatch.support@gmail.com; no automatic deletion exists and none is claimed. |
 | D4 | Access/correction/deletion requests via support email; comply with applicable law; 45 calendar days where applicable, subject to lawful extensions; identity verification may be required; never request bank passwords, Plaid tokens or full account numbers | Privacy §11 | Procedure only; no request-tracking runbook verified. 45 days is stated as conditional on the applicable law, not universal. |
@@ -294,7 +294,7 @@ Website changes: `privacy.html` (draft notice, §1 scope/territory, §9 retentio
 
 | ID | Status |
 | --- | --- |
-| B1 | **Open:** Livapo LLC registration and any required business address. |
+| B1 | **Open:** registration of the then-proposed operator (superseded by Astora LLC, §12) and any required business address. |
 | B2 | **Mostly resolved:** support, connections, history, logs and backups approved and documented. Deletion-marker expiry remains open (11.2 #1). |
 | B3 | Open (unchanged). |
 | B4 | Open (unchanged). |
@@ -314,7 +314,7 @@ Website base: branch `feature/refundwatch-legal-pages-v1` at `daae37c52034db1836
 
 | Area | Change |
 | --- | --- |
-| Operator | Livapo LLC replaced by **Astora LLC, a Colorado single-member LLC**, in Privacy §1/§14 notice, Terms §1/§10 and the footer of all four pages. Registration evidence and business address were not supplied to this review; the address is still marked as pending. |
+| Operator | The previously proposed operator name (recorded in §11 as of 2026-11-18) replaced by **Astora LLC, a Colorado single-member LLC**, in Privacy §1/§14 notice, Terms §1/§10 and the footer of all four pages. Registration evidence and business address were not supplied to this review; the address is still marked as pending. |
 | Deletion marker (Privacy §9) | Now describes its contents (one-way hash of the account ID, deletion times, unresolved count) and automatic removal about 30 days after the sign-in account deletion is confirmed; kept while that deletion is unconfirmed. Replaces "expiration period has not yet been set". |
 | Draft wording | Body text no longer calls itself a draft ("This policy describes…", "These Terms describe…"). The "Draft — not yet effective" banners, the "not yet effective" statements and "Draft last updated" lines are kept. The App Store reconciliation sentence in Privacy §3 moved to the source comment. |
 | Support | Link text "Privacy Policy draft" → "Privacy Policy". |
