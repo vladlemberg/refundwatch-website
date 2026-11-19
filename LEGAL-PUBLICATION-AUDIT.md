@@ -3,6 +3,8 @@
 **Author:** Codex · **Date:** 2026-11-18 (America/Denver) · **Version:** 1.0  
 **Status:** Audit completed; publication blocked. **Final recommendation: NOT READY.**
 
+> **Update 2026-11-18 — owner decisions incorporated.** Section 11 records the product owner's approved legal and retention decisions, the resulting Privacy/Terms/Support changes, policy-versus-implementation discrepancies and the updated blocker status. Rows in §2 whose paragraphs changed are superseded by §11; their line numbers refer to the earlier revision. Recommendation remains **NOT READY**: Livapo LLC is not registered.
+
 Privacy Policy v1.0 and Terms of Service v1.0 are intended publication versions, not approved/effective policies. Existing website PR [#1](https://github.com/vladlemberg/refundwatch-website/pull/1) must remain Draft. This report authorizes neither merge nor deployment.
 
 ## 1. Scope, revisions and evidence limits
@@ -256,3 +258,48 @@ Both returned `[]`. Scope is this database's schedules and regional backups; man
 - [Existing RefundWatch publication checklist](https://www.notion.so/40501238a0a381c584a0decf9b9f81b9).
 - [Existing App Store Privacy Disclosure Draft](https://www.notion.so/40501238a0a381b4a0d3ea574742889c).
 - [Existing App Store Technical Readiness](https://www.notion.so/40501238a0a3810b9517d7eadb0fdbdf).
+
+## 11. Owner decisions incorporated (2026-11-18)
+
+Website changes: `privacy.html` (draft notice, §1 scope/territory, §9 retention, §10 re-registration, §11 requests), `terms.html` (draft notice, §1, §2 territory, §4 connection lifetime, §7 support target, §8 re-registration, §10) and `support.html` (response target and correspondence retention, kept consistent with Terms). Draft notices kept; no effective date set. Application source re-read at app `main` `6d31c5facb6f2d7e5f0693c0d304e840ba21029e`.
+
+### 11.1 Decisions and where they appear
+
+| # | Approved decision | Website wording | Implementation status |
+| --- | --- | --- | --- |
+| D1 | Proposed operator Livapo LLC, Colorado, US; registration and address pending | Privacy/Terms draft notice and §1; Terms §10 | Not registered. No registration detail, address or effective date invented. |
+| D2 | Support initial-response target 2 business days, not a legal SLA | Terms §7; Support | Operational goal only; no ticketing system or measurement exists. |
+| D3 | Support correspondence (emails, replies, attachments) kept 12 months after case closure; legal exceptions; reopened cases restart on next closure | Privacy §9 | **Procedure only.** Mailbox is refundwatch.support@gmail.com; no automatic deletion exists and none is claimed. |
+| D4 | Access/correction/deletion requests via support email; comply with applicable law; 45 calendar days where applicable, subject to lawful extensions; identity verification may be required; never request bank passwords, Plaid tokens or full account numbers | Privacy §11 | Procedure only; no request-tracking runbook verified. 45 days is stated as conditional on the applicable law, not universal. |
+| D5 | Plaid connections stay active until Disconnect or account deletion; no inactivity disconnection now or planned; successful disconnect revokes access and removes credentials; limited recovery information on technical failure | Privacy §9; Terms §4 | **Consistent.** No scheduled function in `functions/src` and no Firestore TTL policy in Production (`gcloud firestore fields ttls list` → `[]`). Disconnect behavior per §3. |
+| D6 | Logs `_Default` 30 days, `_Required` 400 days | Privacy §9 (unchanged) | **Consistent.** Re-read 2026-11-18: 30 / 400. |
+| D7 | Plaid operation history kept while the account exists; deleted on successful account deletion | Privacy §9 (new bullet) | **Consistent.** Production E2E (2026-11-19 00:30 UTC): `plaidOperations` 2 → 0 after deletion. |
+| D8 | Full transaction feeds not persistently stored in the app database | Privacy §5, §9 | **Consistent** (`functions/src/transactions.js`). |
+| D9 | Backups: describe verified configuration only | Privacy §9 (new bullet) | **Consistent.** Re-read 2026-11-18: PITR disabled, version retention 3600s, no backup schedules, no regional backups. No schedule or deletion guarantee invented. |
+| D10 | Account deletion removes active account data and records, revokes known Plaid connections, removes account-scoped local data; new sign-up starts clean; some technical/provider/backup records may remain | Privacy §10; Terms §8 | **Consistent.** Production Apple E2E PASS (Notion Technical Readiness §19). A new sign-up gets a new Firebase UID, so its storage namespace and Firestore owner key differ (observed in the Development Apple E2E: deleted UID replaced by a new UID on next sign-in). |
+| D11 | Deletion marker: minimal, not kept indefinitely by default; expiry period pending verification | Privacy §9 | **Discrepancy (open).** The marker `{deleted:{at,unresolvedConnections}}` currently has no expiry, no TTL policy and no cleanup job. The policy says only that it is *not intended* to be kept indefinitely and that no period is set. |
+| D12 | US users, USD, eligible Plaid-supported US institutions; Puerto Rico not excluded but not guaranteed; minimum age 18 | Privacy §1, §13; Terms §2 | **Consistent.** Plaid Link and exchange use `country_codes: ["US"]`; connected accounts and credits are USD-only. Puerto Rico institution coverage is Plaid-dependent and unverified. |
+
+### 11.2 Policy versus implementation — open gaps
+
+1. **Deletion-marker expiry (D11):** design and verify an expiry that cannot let a stale ID token or a late retry recreate deleted data, then set the period. Until then the policy must not state a period. Requires separately authorized backend work.
+2. **Support retention (D3) and privacy requests (D4):** write an operational runbook (case open/close/reopen dates, 12-month review, legal hold, identity verification, 45-day tracking). No automation exists.
+3. **In-app deletion copy (B6):** `SettingsView` "permanently delete … all" wording remains broader than the qualified policy.
+4. **App Store privacy answers (B3):** support correspondence and SDK categories still need reconciling with App Store Connect.
+5. **Google disconnect** remains best-effort (unchanged; RW-59 covers delete-account diagnostics).
+
+### 11.3 Blocker status after this update
+
+| ID | Status |
+| --- | --- |
+| B1 | **Open:** Livapo LLC registration and any required business address. |
+| B2 | **Mostly resolved:** support, connections, history, logs and backups approved and documented. Deletion-marker expiry remains open (11.2 #1). |
+| B3 | Open (unchanged). |
+| B4 | Open (unchanged). |
+| B5 | **Partly resolved:** Production Apple deletion E2E PASS; Development Google deletion E2E PASS. Production Google deletion not run; Apple-side and Plaid Dashboard confirmations pending. |
+| B6 | Open (unchanged). |
+| B7 | **Partly resolved:** request channel, verification, 45-day conditional period, territory and age approved. Legal review of applicable regimes, transfers and sale/sharing positions remains. |
+| B8 | **Partly resolved:** response target and retention approved; mailbox ownership and runbook still to be written. |
+| B9 | Open: URLs, in-app link, effective date, publication approval. |
+
+**Recommendation: NOT READY FOR LEGAL PUBLICATION.** Keep PR #1 Draft; no merge or deployment.
