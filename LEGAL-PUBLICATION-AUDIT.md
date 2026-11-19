@@ -332,7 +332,7 @@ Website base: branch `feature/refundwatch-legal-pages-v1` at `daae37c52034db1836
 
 | ID | Status |
 | --- | --- |
-| B1 | **Partly resolved:** operator named (Astora LLC). Registration evidence and any required business address outstanding. |
+| B1 | **Partly resolved:** operator named (Astora LLC). **PO decision 2026-11-19:** public contact is company name, Colorado (United States) and refundwatch.support@gmail.com; no residential address is published. Legal sufficiency of these contact details pending legal/compliance review. |
 | B2 | **Resolved in policy:** all retention decisions documented; deletion-marker expiry implemented and deployed. Production observation of a scheduled expiry pending. |
 | B3 | Open: App Store privacy answers and SDK categories reconciliation. |
 | B4 | Open: release provenance for the submitted build. |
