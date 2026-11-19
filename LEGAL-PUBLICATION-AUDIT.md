@@ -3,6 +3,8 @@
 **Author:** Codex · **Date:** 2026-11-18 (America/Denver) · **Version:** 1.0  
 **Status:** Audit completed; publication blocked. **Final recommendation: NOT READY.**
 
+> **Update 2026-11-19 — operator and deletion-marker expiry.** See §12. Operator is now Astora LLC; the deletion-marker expiry is deployed in Production.
+>
 > **Update 2026-11-18 — owner decisions incorporated.** Section 11 records the product owner's approved legal and retention decisions, the resulting Privacy/Terms/Support changes, policy-versus-implementation discrepancies and the updated blocker status. Rows in §2 whose paragraphs changed are superseded by §11; their line numbers refer to the earlier revision. Recommendation remains **NOT READY**: Livapo LLC is not registered.
 
 Privacy Policy v1.0 and Terms of Service v1.0 are intended publication versions, not approved/effective policies. Existing website PR [#1](https://github.com/vladlemberg/refundwatch-website/pull/1) must remain Draft. This report authorizes neither merge nor deployment.
@@ -303,3 +305,41 @@ Website changes: `privacy.html` (draft notice, §1 scope/territory, §9 retentio
 | B9 | Open: URLs, in-app link, effective date, publication approval. |
 
 **Recommendation: NOT READY FOR LEGAL PUBLICATION.** Keep PR #1 Draft; no merge or deployment.
+
+## 12. Operator change and deletion-marker expiry (2026-11-19)
+
+Website base: branch `feature/refundwatch-legal-pages-v1` at `daae37c52034db1836d43dbafa365d5624856930`, `main` at `ef670d80c3914315fcde357c16cc0d6aeb83f4e8`. App source: `main` at `a68891f60161edd666e141dfdf37b0232439511d` (includes refund-watch PR #34).
+
+### 12.1 Changes
+
+| Area | Change |
+| --- | --- |
+| Operator | Livapo LLC replaced by **Astora LLC, a Colorado single-member LLC**, in Privacy §1/§14 notice, Terms §1/§10 and the footer of all four pages. Registration evidence and business address were not supplied to this review; the address is still marked as pending. |
+| Deletion marker (Privacy §9) | Now describes its contents (one-way hash of the account ID, deletion times, unresolved count) and automatic removal about 30 days after the sign-in account deletion is confirmed; kept while that deletion is unconfirmed. Replaces "expiration period has not yet been set". |
+| Draft wording | Body text no longer calls itself a draft ("This policy describes…", "These Terms describe…"). The "Draft — not yet effective" banners, the "not yet effective" statements and "Draft last updated" lines are kept. The App Store reconciliation sentence in Privacy §3 moved to the source comment. |
+| Support | Link text "Privacy Policy draft" → "Privacy Policy". |
+| README | Operator, support target and remaining blockers updated. |
+
+### 12.2 Deletion-marker evidence
+
+- refund-watch PR #34 (merged `a68891f`): `deleteAccount` sets `deleted.authDeletedAt` and `expireAt` (+30 days) only after Firebase Auth confirms the user is deleted; unconfirmed markers get no expiry. 145/145 backend tests passed at review.
+- Production `deleteAccount` revision `deleteaccount-00002-nen` serves `a68891f` source (deployed 2026-11-19, source compared byte-for-byte with `main`).
+- Production TTL policy `plaidUsers.expireAt`: **ACTIVE** (2026-11-19).
+- The one pre-existing Production marker was deleted on 2026-11-19 (0 Auth users); `plaidUsers` is empty.
+- **Not yet observed:** a Production deletion writing `expireAt`, and a TTL removal. The policy says "scheduled" and "about 30 days"; Firestore TTL removes documents after, never before, `expireAt`.
+
+### 12.3 Blocker status
+
+| ID | Status |
+| --- | --- |
+| B1 | **Partly resolved:** operator named (Astora LLC). Registration evidence and any required business address outstanding. |
+| B2 | **Resolved in policy:** all retention decisions documented; deletion-marker expiry implemented and deployed. Production observation of a scheduled expiry pending. |
+| B3 | Open: App Store privacy answers and SDK categories reconciliation. |
+| B4 | Open: release provenance for the submitted build. |
+| B5 | Partly resolved (unchanged from §11.3). |
+| B6 | Open: in-app deletion wording. |
+| B7 | Open: legal review. |
+| B8 | Partly resolved: runbook still to be written. |
+| B9 | Open: URLs, in-app link, effective date, Product Owner approval. |
+
+**Recommendation: NOT READY FOR LEGAL PUBLICATION** until B1 address, B3, B7 and B9 are resolved. Ready for independent QA of the text.

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Review draft of RefundWatch privacy practices: sign-in, Plaid connections, local receipts, retention and deletion.">
+  <meta name="description" content="RefundWatch privacy practices: sign-in, read-only Plaid connections, local receipts, retention and account deletion.">
   <meta name="theme-color" content="#137a56">
   <title>Privacy Policy | RefundWatch</title>
   <link rel="stylesheet" href="styles.css">
@@ -20,15 +20,17 @@
     <article class="wrap content">
       <div class="eyebrow">Legal</div>
       <h1>Privacy Policy</h1>
-      <p class="note"><strong>Draft — not yet effective.</strong> Prepared for review on November 18, 2026. Livapo LLC, a proposed Colorado limited liability company, is the intended operator; its registration and business address are pending. Operator registration, the remaining deletion-safeguard retention decision and legal review must be completed before this policy is published as effective.</p>
-      <!-- PUBLICATION BLOCKERS: Livapo LLC (Colorado) registration and any required business address are pending.
-           Owner-approved retention decisions (support correspondence, bank connections, logs, connection history,
-           account deletion, territory) are incorporated. The deletion-marker expiration period remains a technical
-           decision pending verification. Legal review, release-specific SDK/App Store disclosures and the effective date
-           remain open. This review draft must not be merged to the GitHub Pages deployment branch as a final policy. -->
+      <p class="note"><strong>Draft — not yet effective.</strong> Prepared for review on November 19, 2026. Legal review, the operator’s business address, Product Owner approval and an effective date are required before this policy is published as effective.</p>
+      <!-- PUBLICATION BLOCKERS: Operator Astora LLC (Colorado single-member LLC): registration evidence and any required
+           business address still to be supplied. Owner-approved retention decisions are incorporated, and the
+           deletion-marker expiry (30 days after confirmed sign-in account deletion) is deployed with an ACTIVE Production
+           TTL policy since November 19, 2026; a Production deletion observing the scheduled expiry is still pending.
+           Release-specific SDK categories and App Store privacy answers must be reconciled with section 3. Legal review,
+           Product Owner approval and the effective date remain open. Do not merge to the GitHub Pages deployment branch
+           as a final policy until these are resolved. -->
 
       <h2 id="scope">1. About this policy</h2>
-      <p>RefundWatch helps you track refunds you register and, if you connect a supported financial account, check for credits that may match them. This draft describes the iOS app, its supporting backend and these informational web pages. “RefundWatch,” “we” and “us” refer to the service operator. Livapo LLC, a proposed Colorado (United States) limited liability company, is the intended operator. It is not yet registered, and its registration details and business address are pending; they must be finalized before this policy takes effect.</p>
+      <p>RefundWatch helps you track refunds you register and, if you connect a supported financial account, check for credits that may match them. This policy describes the iOS app, its supporting backend and these informational web pages. RefundWatch is operated by Astora LLC, a Colorado (United States) single-member limited liability company. “RefundWatch,” “we” and “us” refer to Astora LLC as the operator of RefundWatch.</p>
       <p>RefundWatch is intended for users in the United States who are at least 18 years old. It supports amounts in US dollars (USD). Bank connections are limited to eligible US financial institutions supported by Plaid; RefundWatch does not support every US bank. Puerto Rico is not categorically excluded, but availability there is not guaranteed and depends on institution support.</p>
       <p>For privacy questions, contact <a href="mailto:refundwatch.support@gmail.com">refundwatch.support@gmail.com</a>. This policy does not replace the notices of Apple, Google, Plaid, your bank or your email provider.</p>
 
@@ -45,7 +47,7 @@
       <h2 id="authentication">3. Apple, Google and Firebase Authentication</h2>
       <p>RefundWatch offers Sign in with Apple and Google Sign-In, using Firebase Authentication to manage the account and session. Your provider may supply an email address, name and other basic profile information. If you choose Apple’s Hide My Email, the address may be a relay address.</p>
       <p>You authenticate with your provider rather than giving RefundWatch your Apple or Google password. Firebase and the sign-in components also process technical information for authentication and abuse prevention. See <a href="https://firebase.google.com/support/privacy">Firebase privacy and security information</a>, <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a> and <a href="https://policies.google.com/privacy">Google’s privacy policy</a>.</p>
-      <p>Google Sign-In’s SDK privacy disclosures list name, email address, phone number, approximate location, user and device identifiers, usage information and other data, for app functionality and analytics. Firebase Authentication’s SDK disclosure also lists diagnostic data for analytics. These provider declarations are broader than the information RefundWatch’s own sign-in code reads; they do not establish that every listed field is processed for every user. Google also describes user identifiers and IP-based approximate location for sign-in security in its <a href="https://developers.google.com/identity/sign-in/ios/app-privacy">Google Sign-In data-use notice</a>. The release-specific disclosures require reconciliation before this draft becomes effective.</p>
+      <p>Google Sign-In’s SDK privacy disclosures list name, email address, phone number, approximate location, user and device identifiers, usage information and other data, for app functionality and analytics. Firebase Authentication’s SDK disclosure also lists diagnostic data for analytics. These provider declarations are broader than the information RefundWatch’s own sign-in code reads; they do not establish that every listed field is processed for every user. Google also describes user identifiers and IP-based approximate location for sign-in security in its <a href="https://developers.google.com/identity/sign-in/ios/app-privacy">Google Sign-In data-use notice</a>.</p>
 
       <h2 id="bank-connections">4. Plaid and read-only bank connections</h2>
       <p>Bank connections use Plaid. You authenticate through Plaid or your financial institution and select the supported accounts you want to connect. RefundWatch sends Plaid a RefundWatch user identifier to associate the connection with your account. Plaid and your institution process information under their own notices, including the <a href="https://plaid.com/legal/#end-user-privacy-policy">Plaid End User Privacy Policy</a>.</p>
@@ -81,7 +83,7 @@
         <li><strong>Transaction feed:</strong> processed for the requested check. Full bank transaction feeds are not persistently stored in the RefundWatch application database.</li>
         <li><strong>Local refunds and receipts:</strong> remain until removed using the app’s available controls, local account cleanup or app removal. Signing out does not delete them. Other devices and backups can retain their own copies.</li>
         <li><strong>Operational logs:</strong> the current Production default Cloud Logging bucket is configured for 30 days. The required administrative audit bucket retains logs for 400 days. These logs are not removed by in-app account deletion.</li>
-        <li><strong>Deletion safeguards:</strong> after account deletion, RefundWatch retains only minimal technical information needed to prevent restoration of deleted account data and to complete unresolved deletion operations. This marker is not intended to be kept indefinitely; its expiration period has not yet been set. Limited unresolved-connection references may also remain in operational logs for investigation.</li>
+        <li><strong>Deletion safeguards:</strong> after account deletion, RefundWatch keeps a minimal technical marker, consisting of a one-way hash of the account identifier, deletion times and a count of unresolved bank connections, so that deleted account data cannot be restored and unresolved deletion operations can be completed. The marker is scheduled for automatic removal about 30 days after deletion of the sign-in account is confirmed; the database provider may remove it somewhat later. If deletion of the sign-in account cannot be confirmed, the marker is kept until it is. Limited unresolved-connection references may also remain in operational logs for investigation.</li>
         <li><strong>Backups:</strong> at the most recent configuration review (November 2026), the Production database had no scheduled backups, no stored backups and point-in-time recovery disabled; the database provider keeps a short version history of about one hour. Google, Plaid, email providers and other providers may keep their own copies under their own retention practices. This describes current configuration, not a guarantee that every provider-held copy is removed on a fixed schedule.</li>
         <li><strong>Support correspondence:</strong> support emails, replies and attachments are retained for 12 months after the support case is closed, unless a longer period is legally required. If a case is reopened, the 12-month period starts again when it is closed again. This schedule is applied through our support procedures; your email provider may keep its own copies.</li>
       </ul>
@@ -110,13 +112,13 @@
       <p>RefundWatch is intended for adults. You must be at least 18 years old to use the service. If you have a concern about information provided by someone under 18, contact <a href="mailto:refundwatch.support@gmail.com">refundwatch.support@gmail.com</a>.</p>
 
       <h2 id="changes">14. Updates and contact</h2>
-      <p>This draft is not yet effective. The publication date and final notice of changes will be set after review. Contact RefundWatch about privacy or support at <a href="mailto:refundwatch.support@gmail.com">refundwatch.support@gmail.com</a> or visit <a href="support.html">RefundWatch Support</a>.</p>
-      <p><strong>Draft last updated:</strong> November 18, 2026.</p>
+      <p>This policy is not yet effective; its effective date will be set when it is published. Updates will be posted on this page, with notice of material changes as required by applicable law. Contact RefundWatch about privacy or support at <a href="mailto:refundwatch.support@gmail.com">refundwatch.support@gmail.com</a> or visit <a href="support.html">RefundWatch Support</a>.</p>
+      <p><strong>Draft last updated:</strong> November 19, 2026.</p>
     </article>
   </main>
   <footer>
     <div class="wrap">
-      <span>© 2026 RefundWatch</span>
+      <span>© 2026 Astora LLC</span>
       <span>Refund tracking. No payments or money transfers.</span>
       <a href="mailto:refundwatch.support@gmail.com">refundwatch.support@gmail.com</a>
     </div>

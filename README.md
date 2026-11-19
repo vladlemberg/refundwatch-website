@@ -11,14 +11,15 @@ Static informational website for RefundWatch, published via GitHub Pages from `m
 ## Before publishing for Plaid / App Store
 - [ ] Verify the product descriptions against the deployed iOS app and backend.
 - [x] Add the owner-provided support/privacy contact: refundwatch.support@gmail.com.
-- [ ] Owner confirms the mailbox is monitored; no response-time commitment is made.
-- [ ] Finalize the privacy policy: actual data categories, storage, sharing, retention, deletion, rights, and operator identity.
+- [ ] Owner confirms the mailbox is monitored. Support target: initial response within 2 business days (a goal, not a guarantee).
+- [x] Operator named: Astora LLC, a Colorado single-member LLC. Business address still to be added.
+- [ ] Finalize the privacy policy: legal review and App Store privacy-answer reconciliation.
 - [ ] Finalize Terms of Service and obtain legal review as appropriate.
 - [ ] Replace placeholder brand mark with approved RefundWatch app icon.
 - [ ] Remove draft banners only after review.
 - [ ] Confirm public HTTPS access to all four pages.
 
-The legal-page update remains a review draft, not an effective policy or a deployment approval. Operator identity and any required mailing address, final retention decisions (connection history, deletion safeguards, backups and support correspondence), applicable privacy-rights procedures, third-party/App Store disclosures, legal approval and an effective date remain publication blockers. Explicit source comments in `privacy.html` and `terms.html` track these decisions. Keep both draft banners until those decisions are resolved.
+The legal pages remain review drafts, not an effective policy or a deployment approval. Retention decisions and the deletion-marker expiry are incorporated. The operator's business address, third-party/App Store disclosure reconciliation, legal review, Product Owner approval and an effective date remain publication blockers. Explicit source comments in `privacy.html` and `terms.html` track these decisions. Keep both draft banners until those decisions are resolved.
 
 The pages describe the reviewed iOS/backend source at `56d2672c7bdf50655015a40114551dea2beb35a7`. Source inspection does not establish that every deployed component or App Store Connect disclosure matches that revision. The PR records the technical claim verification and validation evidence.
 
