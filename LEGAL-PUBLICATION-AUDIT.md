@@ -5,6 +5,8 @@
 
 > **Update 2026-11-19 — operator and deletion-marker expiry.** See §12. Operator is now Astora LLC; the deletion-marker expiry is deployed in Production.
 >
+> **Current contact decision (PO, 2026-11-19):** public contact is Astora LLC, Colorado, United States, and refundwatch.support@gmail.com. No residential or mailing address is published, and none needs to be added to the pages. Legal sufficiency of these details is pending legal/compliance review. Earlier address requirements (§7 B1, §8 item 1, §11 D1/B1 and the §12.1 operator row) are historical and **superseded** by §12.3 B1.
+>
 > **Update 2026-11-18 — owner decisions incorporated.** Section 11 records the product owner's approved legal and retention decisions, the resulting Privacy/Terms/Support changes, policy-versus-implementation discrepancies and the updated blocker status. Rows in §2 whose paragraphs changed are superseded by §11; their line numbers refer to the earlier revision. Recommendation remained **NOT READY**: the operator then proposed (a name since superseded; see §12) was not registered.
 
 Privacy Policy v1.0 and Terms of Service v1.0 are intended publication versions, not approved/effective policies. Existing website PR [#1](https://github.com/vladlemberg/refundwatch-website/pull/1) must remain Draft. This report authorizes neither merge nor deployment.
@@ -269,7 +271,7 @@ Website changes: `privacy.html` (draft notice, §1 scope/territory, §9 retentio
 
 | # | Approved decision | Website wording | Implementation status |
 | --- | --- | --- | --- |
-| D1 | Proposed operator (a Colorado LLC name since superseded by Astora LLC, §12); registration and address pending | Privacy/Terms draft notice and §1; Terms §10 | Not registered. No registration detail, address or effective date invented. |
+| D1 | Proposed operator (a Colorado LLC name since superseded by Astora LLC, §12); registration and address pending *(as of 2026-11-18; address requirement superseded, see §12.3 B1)* | Privacy/Terms draft notice and §1; Terms §10 | Not registered. No registration detail, address or effective date invented. |
 | D2 | Support initial-response target 2 business days, not a legal SLA | Terms §7; Support | Operational goal only; no ticketing system or measurement exists. |
 | D3 | Support correspondence (emails, replies, attachments) kept 12 months after case closure; legal exceptions; reopened cases restart on next closure | Privacy §9 | **Procedure only.** Mailbox is refundwatch.support@gmail.com; no automatic deletion exists and none is claimed. |
 | D4 | Access/correction/deletion requests via support email; comply with applicable law; 45 calendar days where applicable, subject to lawful extensions; identity verification may be required; never request bank passwords, Plaid tokens or full account numbers | Privacy §11 | Procedure only; no request-tracking runbook verified. 45 days is stated as conditional on the applicable law, not universal. |
@@ -294,7 +296,7 @@ Website changes: `privacy.html` (draft notice, §1 scope/territory, §9 retentio
 
 | ID | Status |
 | --- | --- |
-| B1 | **Open:** registration of the then-proposed operator (superseded by Astora LLC, §12) and any required business address. |
+| B1 | **Open (as of 2026-11-18):** registration of the then-proposed operator (superseded by Astora LLC, §12) and any required business address. *Superseded: see §12.3 B1.* |
 | B2 | **Mostly resolved:** support, connections, history, logs and backups approved and documented. Deletion-marker expiry remains open (11.2 #1). |
 | B3 | Open (unchanged). |
 | B4 | Open (unchanged). |
@@ -314,7 +316,7 @@ Website base: branch `feature/refundwatch-legal-pages-v1` at `daae37c52034db1836
 
 | Area | Change |
 | --- | --- |
-| Operator | The previously proposed operator name (recorded in §11 as of 2026-11-18) replaced by **Astora LLC, a Colorado single-member LLC**, in Privacy §1/§14 notice, Terms §1/§10 and the footer of all four pages. Registration evidence and business address were not supplied to this review; the address is still marked as pending. |
+| Operator | The previously proposed operator name (recorded in §11 as of 2026-11-18) replaced by **Astora LLC, a Colorado single-member LLC**, in Privacy §1/§14 notice, Terms §1/§10 and the footer of all four pages. Registration evidence and business address were not supplied to this review; at this step the address was still marked as pending. *Superseded later on 2026-11-19 by the PO contact decision (§12.3 B1): no address is published and the pages no longer ask for one.* |
 | Deletion marker (Privacy §9) | Now describes its contents (one-way hash of the account ID, deletion times, unresolved count) and automatic removal about 30 days after the sign-in account deletion is confirmed; kept while that deletion is unconfirmed. Replaces "expiration period has not yet been set". |
 | Draft wording | Body text no longer calls itself a draft ("This policy describes…", "These Terms describe…"). The "Draft — not yet effective" banners, the "not yet effective" statements and "Draft last updated" lines are kept. The App Store reconciliation sentence in Privacy §3 moved to the source comment. |
 | Support | Link text "Privacy Policy draft" → "Privacy Policy". |
@@ -342,4 +344,4 @@ Website base: branch `feature/refundwatch-legal-pages-v1` at `daae37c52034db1836
 | B8 | Partly resolved: runbook still to be written. |
 | B9 | Open: URLs, in-app link, effective date, Product Owner approval. |
 
-**Recommendation: NOT READY FOR LEGAL PUBLICATION** until B1 address, B3, B7 and B9 are resolved. Ready for independent QA of the text.
+**Recommendation: NOT READY FOR LEGAL PUBLICATION** until B3, B7 and B9 are resolved and legal/compliance review confirms that the B1 public contact details (company name, Colorado, United States, support email) are sufficient. No address needs to be added. Ready for independent QA of the text.
