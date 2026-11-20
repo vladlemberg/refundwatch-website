@@ -1,1 +1,129 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Draft RefundWatch privacy policy describing refund tracking and read-only Plaid access."><meta name="theme-color" content="#137a56"><title>Privacy Policy | RefundWatch</title><link rel="stylesheet" href="styles.css"></head><body><header><nav class="wrap"><a class="brand" href="index.html"><span>↺</span>RefundWatch</a><div class="links"><a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></div></nav></header><main><article class="wrap content"><div class="eyebrow">Legal</div><h1>Privacy Policy</h1><p class="note"><strong>Draft — not yet effective.</strong> This page must be reviewed and completed before public launch. Contact details, retention periods, and actual data handling must be verified.</p><p>RefundWatch helps you track refunds you manually register. With your permission, it uses Plaid to connect to a bank account you select and look for incoming refund transactions.</p><h2>Information we process</h2><p>Depending on the features you use, this may include refund details you enter (such as merchant, amount, expected date and notes), selected account identifiers, and transaction information needed to identify incoming refunds.</p><h2>How we use information</h2><p>We use this information to display your tracked refunds and identify potential matching credits on the account you choose. RefundWatch is read-only and cannot initiate payments, transfers or withdrawals.</p><h2>Bank connections</h2><p>Bank connections are provided through Plaid. Plaid's own privacy practices also apply to information processed through its services. You can disconnect a linked account from within RefundWatch.</p><h2>Security, retention and deletion</h2><p>We use security measures appropriate to the service. Specific storage, retention, deletion and third-party processing details will be documented here before launch.</p><h2>Contact</h2><p>For privacy questions or data requests, see our <a href="support.html">Support page</a>. A verified support email will be published before launch.</p><p><strong>Last updated:</strong> November 18, 2026 (draft).</p></article></main><footer><div class="wrap"><span>© 2026 RefundWatch</span><span>Independent service. Not affiliated with Plaid or any bank.</span></div></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="RefundWatch privacy practices: sign-in, read-only Plaid connections, local receipts, retention and account deletion.">
+  <meta name="theme-color" content="#137a56">
+  <title>Privacy Policy | RefundWatch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="index.html"><span aria-hidden="true">↺</span>RefundWatch</a>
+      <div class="links"><a href="index.html">Home</a> <a href="privacy.html" aria-current="page">Privacy</a> <a href="terms.html">Terms</a> <a href="support.html">Support</a></div>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <article class="wrap content">
+      <div class="eyebrow">Legal</div>
+      <h1>Privacy Policy</h1>
+      <p class="note"><strong>Draft — not yet effective.</strong> Prepared for review on November 19, 2026. Legal review, Product Owner approval and an effective date are required before this policy is published as effective.</p>
+      <!-- PUBLIC CONTACT (PO decision 2026-11-19): operator Astora LLC, Colorado, United States, and
+           refundwatch.support@gmail.com. No residential or mailing address is published. Legal sufficiency of these
+           contact details remains subject to legal/compliance review. -->
+      <!-- PUBLICATION BLOCKERS: Owner-approved retention decisions are incorporated, and the
+           deletion-marker expiry (30 days after confirmed sign-in account deletion) is deployed with an ACTIVE Production
+           TTL policy since November 19, 2026; a Production deletion observing the scheduled expiry is still pending.
+           Release-specific SDK categories and App Store privacy answers must be reconciled with section 3. Legal review,
+           Product Owner approval and the effective date remain open. Do not merge to the GitHub Pages deployment branch
+           as a final policy until these are resolved. -->
+
+      <h2 id="scope">1. About this policy</h2>
+      <p>RefundWatch helps you track refunds you register and, if you connect a supported financial account, check for credits that may match them. This policy describes the iOS app, its supporting backend and these informational web pages. RefundWatch is operated by Astora LLC, a Colorado (United States) single-member limited liability company. “RefundWatch,” “we” and “us” refer to Astora LLC as the operator of RefundWatch.</p>
+      <p>RefundWatch is intended for users in the United States who are at least 18 years old. It supports amounts in US dollars (USD). Bank connections are limited to eligible US financial institutions supported by Plaid; RefundWatch does not support every US bank. Puerto Rico is not categorically excluded, but availability there is not guaranteed and depends on institution support.</p>
+      <p>For privacy questions, contact <a href="mailto:refundwatch.support@gmail.com">refundwatch.support@gmail.com</a>. This policy does not replace the notices of Apple, Google, Plaid, your bank or your email provider.</p>
+
+      <h2 id="information">2. Information processed</h2>
+      <ul>
+        <li><strong>Sign-in information:</strong> identifiers, email address and basic profile information made available through your chosen Apple or Google sign-in, together with authentication and session information.</li>
+        <li><strong>Connected-account information:</strong> selected account names, types, masked account digits, currency, bank/institution information, connection/account identifiers and an encrypted Plaid access token.</li>
+        <li><strong>Transaction information during a check:</strong> account and transaction information returned by Plaid for the requested accounts and period. The backend filters this information before returning eligible credits to your device.</li>
+        <li><strong>Information you enter on your device:</strong> refund merchants, amounts, dates, notes, status, destination accounts, merchant associations and matching identifiers; receipt photos if you choose to save them.</li>
+        <li><strong>Technical information:</strong> app-integrity information and operational/security logs, which may include IP addresses, user agents, request times, results, error codes and limited connection identifiers.</li>
+        <li><strong>Support correspondence:</strong> your email address, message and information you choose to provide when contacting support. Do not include passwords, access tokens, full account/card numbers or unredacted financial documents.</li>
+      </ul>
+
+      <h2 id="authentication">3. Apple, Google and Firebase Authentication</h2>
+      <p>RefundWatch offers Sign in with Apple and Google Sign-In, using Firebase Authentication to manage the account and session. Your provider may supply an email address, name and other basic profile information. If you choose Apple’s Hide My Email, the address may be a relay address.</p>
+      <p>You authenticate with your provider rather than giving RefundWatch your Apple or Google password. Firebase and the sign-in components also process technical information for authentication and abuse prevention. See <a href="https://firebase.google.com/support/privacy">Firebase privacy and security information</a>, <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a> and <a href="https://policies.google.com/privacy">Google’s privacy policy</a>.</p>
+      <p>Google Sign-In’s SDK privacy disclosures list name, email address, phone number, approximate location, user and device identifiers, usage information and other data, for app functionality and analytics. Firebase Authentication’s SDK disclosure also lists diagnostic data for analytics. These provider declarations are broader than the information RefundWatch’s own sign-in code reads; they do not establish that every listed field is processed for every user. Google also describes user identifiers and IP-based approximate location for sign-in security in its <a href="https://developers.google.com/identity/sign-in/ios/app-privacy">Google Sign-In data-use notice</a>.</p>
+
+      <h2 id="bank-connections">4. Plaid and read-only bank connections</h2>
+      <p>Bank connections use Plaid. You authenticate through Plaid or your financial institution and select the supported accounts you want to connect. RefundWatch sends Plaid a RefundWatch user identifier to associate the connection with your account. Plaid and your institution process information under their own notices, including the <a href="https://plaid.com/legal/#end-user-privacy-policy">Plaid End User Privacy Policy</a>.</p>
+      <p>RefundWatch’s banking functionality is read-only. It does not initiate payments, transfer money, withdraw funds or issue merchant refunds. Its backend stores the connection information described above, including encrypted access credentials; those Plaid access tokens are not sent to the iOS app.</p>
+      <p>Do not send bank login credentials to RefundWatch support. Information available to Plaid may be broader than the account fields RefundWatch stores.</p>
+
+      <h2 id="transactions">5. Transaction processing and matching</h2>
+      <p>RefundWatch requests transactions when you use Check refunds. The current app does not perform background bank polling. The backend processes the requested transaction response in memory and returns eligible posted USD credits with a merchant name, amount, posting date, account identifier, hashed transaction identifier and, when available, a merchant identifier.</p>
+      <p>The current backend does not persist the full transaction feed or account balances in the application database. Plaid and infrastructure providers have their own processing and retention practices; this statement does not mean transactions never leave your device.</p>
+      <p>Matching runs on your device against refunds you registered. A confirmed match saves a transaction identifier locally to prevent reuse. Ambiguous or amount-mismatched credits require review rather than automatic confirmation. A manual Received confirmation records your decision and does not prove that the bank returned the entire expected amount.</p>
+
+      <h2 id="receipts">6. Refunds, receipts and photos</h2>
+      <p>Refund records, merchant information, notes, match decisions and receipt files are stored in account-scoped files on your device. RefundWatch does not upload those records or receipt images to its backend.</p>
+      <p>Receipt text recognition uses Apple Vision on the device. The app asks for camera permission when scanning and uses Apple’s system photo picker for a selected image without requesting broad photo-library permission. Selecting an image stored in iCloud may involve Apple’s photo services.</p>
+      <p>Settings → Save receipt photos controls whether new receipt images are kept in RefundWatch. Turning it off offers a choice to keep or delete existing copies. Extracted refund fields can be saved without retaining the image. New refund saves do not retain raw OCR text; text retained by older app versions may remain in historical records.</p>
+      <p>Your iPhone or computer backup settings may include local refund and receipt files. The bank-metadata cache is excluded from backup. Deleting information in RefundWatch does not delete copies in backups you or your providers control.</p>
+
+      <h2 id="use">7. How information is used and shared</h2>
+      <p>Information is processed to authenticate you, keep account workspaces separate, connect and disconnect accounts, perform refund checks you request, display and save your records, handle deletion requests, respond to support and protect the service.</p>
+      <p>Providers involved include Apple for sign-in and device services; Google/Firebase for authentication, backend functions, Firestore storage, app-integrity checks and logging; Plaid for financial-account connectivity; and GitHub Pages for these informational pages. Sending support email also involves email providers. Each provider’s own terms and privacy notices describe its processing.</p>
+      <p>These pages are hosted by GitHub Pages. GitHub may process technical information associated with visits under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>. This website contains no forms that collect bank information.</p>
+      <!-- PUBLICATION REVIEW: Confirm the operator's sale/sharing, advertising, international-transfer and legal-disclosure positions. No contractual vendor protections or jurisdiction-specific compliance guarantees are asserted here. -->
+
+      <h2 id="security">8. Storage and security</h2>
+      <p>The backend encrypts stored Plaid access tokens. The iOS app uses account-scoped storage and iOS Data Protection for local files. Backend connections use HTTPS, and Firebase App Check is used to help protect backend access.</p>
+      <p>Application logs are designed to contain operation/error information and limited recovery identifiers rather than credentials, receipt images or full transaction feeds. No security measure eliminates every risk.</p>
+
+      <h2 id="retention">9. Retention</h2>
+      <ul>
+        <li><strong>Sign-in account:</strong> kept while your account exists; requesting deletion does not by itself establish that deletion has completed. Google states that, after a customer initiates user deletion, other authentication information is removed from its live and backup systems within 180 days, and logged IP addresses are kept for a few weeks. These are Google’s provider-controlled retention statements, not a promise of immediate erasure by RefundWatch; see <a href="https://firebase.google.com/support/privacy">Firebase’s retention information</a>.</li>
+        <li><strong>Bank connections:</strong> a Plaid connection remains active until you disconnect it or delete your RefundWatch account. Inactivity alone does not disconnect it, and no automatic inactivity-based disconnection is currently planned. Successful disconnection revokes that Plaid connection’s access and removes its encrypted credential and linked accounts from RefundWatch’s active connection records. A minimal disconnected-connection marker remains for safe retries. If disconnection or deletion fails for technical reasons, limited recovery information may be retained so the operation can be completed.</li>
+        <li><strong>Connection-operation history:</strong> records of connect and disconnect operations, which can include account names and masked digits, are retained while your RefundWatch account exists. Disconnecting a single connection does not erase this history; it is deleted when account deletion completes successfully.</li>
+        <li><strong>Transaction feed:</strong> processed for the requested check. Full bank transaction feeds are not persistently stored in the RefundWatch application database.</li>
+        <li><strong>Local refunds and receipts:</strong> remain until removed using the app’s available controls, local account cleanup or app removal. Signing out does not delete them. Other devices and backups can retain their own copies.</li>
+        <li><strong>Operational logs:</strong> the current Production default Cloud Logging bucket is configured for 30 days. The required administrative audit bucket retains logs for 400 days. These logs are not removed by in-app account deletion.</li>
+        <li><strong>Deletion safeguards:</strong> after account deletion, RefundWatch keeps a minimal technical marker, consisting of a one-way hash of the account identifier, deletion times and a count of unresolved bank connections, so that deleted account data cannot be restored and unresolved deletion operations can be completed. The marker is normally scheduled for automatic removal about 30 days after deletion of the sign-in account is confirmed. The database provider removes it after that scheduled time, sometimes later. If deletion of the sign-in account cannot be confirmed, or scheduling the removal fails, the marker is kept longer, until removal is successfully scheduled or the marker is otherwise deleted. Removal within 30 days is therefore not guaranteed. Limited unresolved-connection references may also remain in operational logs for investigation.</li>
+        <li><strong>Backups:</strong> at the most recent configuration review (November 2026), the Production database had no scheduled backups, no stored backups and point-in-time recovery disabled; the database provider keeps a short version history of about one hour. Google, Plaid, email providers and other providers may keep their own copies under their own retention practices. This describes current configuration, not a guarantee that every provider-held copy is removed on a fixed schedule.</li>
+        <li><strong>Support correspondence:</strong> support emails, replies and attachments are retained for 12 months after the support case is closed, unless a longer period is legally required. If a case is reopened, the 12-month period starts again when it is closed again. This schedule is applied through our support procedures; your email provider may keep its own copies.</li>
+      </ul>
+      <p>Plaid and other providers may retain information under their own policies.</p>
+
+      <h2 id="choices">10. Disconnection and account deletion</h2>
+      <p><strong>Disconnect a bank connection:</strong> use Banks &amp; cards in the app. When disconnection completes, RefundWatch revokes the selected Plaid connection and removes all accounts linked through that connection from its active connected-account list. This includes other accounts sharing the same Plaid Item. RefundWatch does not revoke a different Plaid Item merely because it is at the same bank. Disconnection does not close your bank accounts, change bank transactions or erase your local refund history.</p>
+      <p>A separate Plaid sign-in does not guarantee an independent, continuously available connection. Some institutions can invalidate an earlier connection when another is established; see <a href="https://plaid.com/docs/link/duplicate-items/">Plaid’s explanation of duplicate connections</a>. If disconnection fails or its outcome is uncertain, use the app’s retry or recovery instructions. Do not assume access has been revoked until completion is confirmed.</p>
+      <p><strong>Delete your RefundWatch account:</strong> open Settings → Delete Account and follow the reauthentication and confirmation steps. The workflow revokes known Plaid credentials that RefundWatch has retained, removes owned backend connection and operation records, then deletes the Firebase sign-in account. If a bank connection was interrupted before its credential could be stored, RefundWatch may be unable to revoke it automatically; limited unresolved references can remain for investigation. Minimal safeguards and the retention exceptions above can remain.</p>
+      <p>For Sign in with Apple, the normal deletion flow requires revoking the app’s Apple authorization before server deletion. For Google sign-in, it attempts to disconnect the Google authorization during final sign-out; failure of that attempt does not reverse completed RefundWatch deletion. This does not delete your Apple or Google account or guarantee that every provider-held copy is erased.</p>
+      <p>After the server confirms deletion, the app attempts to remove that account’s refunds, receipts, matching history and cached account information from the completing device. Local cleanup can fail even after server deletion and sign-out; a recorded cleanup is retried on a later launch. Another device may clean up when it reconnects and verifies that the account no longer exists. Offline devices and backups can retain copies.</p>
+      <p>Deletion is a sequence of operations, not an atomic all-or-nothing action. It can require retries: some connections or records may already be removed when a later step fails. Do not assume that all copies everywhere disappear immediately, or that a failed or interrupted request means nothing changed. Follow the app’s recovery instructions or contact support if completion is uncertain.</p>
+      <p>If you sign up again after deletion, you start with a new, empty account. Previous refunds, receipts and bank connections are not restored; you would need to reconnect any bank accounts.</p>
+      <p>Deleting the app or signing out is not a substitute for deleting the server account or disconnecting a bank. RefundWatch cannot remotely erase backups or promise immediate erasure of another device’s local files. You can also review Plaid connections at <a href="https://my.plaid.com/">Plaid Portal</a>, subject to Plaid’s own controls.</p>
+
+      <h2 id="privacy-rights">11. Privacy choices and requests</h2>
+      <p>You can view and edit locally stored refunds, manage saved receipt photos, disconnect connections and request account deletion using the app’s controls. Camera access can be managed in iOS Settings.</p>
+      <p>You may request access to, correction of or deletion of your personal information, and depending on applicable law you may have additional rights, such as obtaining a copy. Send privacy questions or requests to <a href="mailto:refundwatch.support@gmail.com">refundwatch.support@gmail.com</a>.</p>
+      <p>We respond as required by applicable privacy law. Where a law that applies to your request sets a response period, that period is generally 45 calendar days, which may be extended as that law permits; not every jurisdiction or request type has the same deadline. We may need to verify your identity before handling a request. We will never ask for your bank password, Plaid access tokens or full account numbers. Do not send identity documents or financial credentials unless a safe verification method has first been agreed.</p>
+
+      <h2 id="analytics">12. Analytics and tracking</h2>
+      <p>The reviewed app code does not integrate an advertising network, the Google Analytics product or Crashlytics. This does not mean that its sign-in SDKs declare no analytics: Google Sign-In and Firebase Authentication include the provider disclosures described above. These website pages contain no cookie-setting code or analytics or tracking scripts; hosting providers can still process technical information about visits. Provider notices apply to their diagnostic, usage and technical processing.</p>
+      <p>The app’s privacy manifest declares no tracking. That declaration and this policy do not replace the separate App Store privacy disclosures, which must also account for third-party SDK behavior.</p>
+
+      <h2 id="age">13. Minimum age</h2>
+      <p>RefundWatch is intended for adults. You must be at least 18 years old to use the service. If you have a concern about information provided by someone under 18, contact <a href="mailto:refundwatch.support@gmail.com">refundwatch.support@gmail.com</a>.</p>
+
+      <h2 id="changes">14. Updates and contact</h2>
+      <p>This policy is not yet effective; its effective date will be set when it is published. Updates will be posted on this page, with notice of material changes as required by applicable law. Contact RefundWatch about privacy or support at <a href="mailto:refundwatch.support@gmail.com">refundwatch.support@gmail.com</a> or visit <a href="support.html">RefundWatch Support</a>.</p>
+      <p><strong>Draft last updated:</strong> November 19, 2026.</p>
+    </article>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Astora LLC</span>
+      <span>Refund tracking. No payments or money transfers.</span>
+      <a href="mailto:refundwatch.support@gmail.com">refundwatch.support@gmail.com</a>
+    </div>
+  </footer>
+</body>
+</html>
